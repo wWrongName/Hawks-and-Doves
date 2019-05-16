@@ -72,17 +72,17 @@ SETTINGS set_rate(double hawk_rate, double dove_rate, double food_rate) {
 	return sttgs;
 }
 
-HEX_COORD *bi_to_hex(BI_COORD *from) {
-	HEX_COORD to;
-	to.z = from->p;
-	to.x = from->q - (to.z >> 1);
-	to.y = ~(to.x + to.z - 1);
-	return &to;   
+HEX_COORD *bi_to_hex(BI_COORD *from) {          // i must not forget to free memory
+	HEX_COORD *to = (HEX_COORD*)malloc(sizeof(HEX_COORD));
+	to->z = from->p;
+	to->x = from->q - (to->z >> 1);
+	to->y = ~(to->x + to->z - 1);
+	return to;   
 }                 
                   
-BI_COORD *hex_to_bi(HEX_COORD *from) {
-	BI_COORD to;  
-	to.p = from->z;
-	to.q = from->x + (to.p >> 1);
-	return &to;
+BI_COORD *hex_to_bi(HEX_COORD *from) {          // i must not forget to free memory
+	BI_COORD *to = (BI_COORD*)malloc(sizeof(BI_COORD)); 
+	to->p = from->z;
+	to->q = from->x + (to->p >> 1);
+	return to;
 }
