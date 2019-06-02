@@ -32,15 +32,15 @@ typedef struct SETTINGS {
 } SETTINGS;
 
 typedef struct HEX_COORD { //  Y /\  |  /\ X       coordinates for game board of hexagons|
-	int x;                 //     \  |  /                                                |
-	int y;                 //       \|/                                                  |
-	int z;				   //       /|\                                                  |
+	int x;             //     \  |  /                                                |
+	int y;             //       \|/                                                  |
+	int z;		   //       /|\                                                  |
 } HEX_COORD;               //     /  |  \                                                |
-						   //   /    V Z  \                                              |
+		           //   /    V Z  \                                              |
 
 typedef struct BI_COORD {  //   Г-----------> Q    coordinatea for an array              |
-	int q;                 //   |                                                        |
-	int p;                 //   |                                                        |
+	int q;             //   |                                                        |
+	int p;             //   |                                                        |
 } BI_COORD;                //   |                                                        |
                            //   V P                                                      |
 
